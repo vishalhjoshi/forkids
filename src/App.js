@@ -1,5 +1,5 @@
-import './App.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./styles/main.scss"
 import {Carousel} from "react-responsive-carousel";
 
 const descriptions = [
@@ -20,16 +20,29 @@ const descriptions = [
 function App() {
     return (
         <div className="App">
-            123
-            <Carousel showArrows={true} swipeable={true} autoPlay={true} infiniteLoop={true} emulateTouch={true}>
-                {descriptions.map((description) => {
-                    return <div>
-                        <img src={process.env.PUBLIC_URL + "/images/" + description[0] + ".jpg"}/>
-                        <p className="legend">{description[1]}</p>
-                    </div>
-                })}
+            <div className="my-carousel">
+                <Carousel showArrows={true}
+                          dynamicHeight={false}
+                          swipeable={true}
+                          autoPlay={true}
+                          infiniteLoop={true}
+                          emulateTouch={true}
+                          useKeyboardArrows={true}
+                          showThumbs={false}
+                          showIndicators={false}
+                          showStatus={true}>
+                    {descriptions.map((description) => {
+                        return <div className={'item flex flex-col'}>
+                            <div className={'description'}>
+                                {description[1]}
+                            </div>
+                            <img className={'image'}
+                                 src={process.env.PUBLIC_URL + "/images/" + description[0] + ".jpg"}/>
+                        </div>
+                    })}
 
-            </Carousel>
+                </Carousel>
+            </div>
         </div>
     );
 }

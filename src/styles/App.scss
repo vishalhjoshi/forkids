@@ -1,0 +1,34 @@
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.App {
+  //width: 100%;
+  height: 100%;
+  background-color: #bbc;
+  padding: 20px;
+}
+
+.my-carousel {
+
+  .item {
+    //margin: 0 20px;
+    .carousel-slider .control-arrow {
+      display: none;
+    }
+
+    .description {
+      color: rgba(108, 99, 126, 1);
+      //margin: 20px;
+      //height: 136px;
+      font-size: calc((75vw - 40px) / 7);
+    }
+
+    .image {
+      border: solid 1px rgba(108, 99, 126, 0.6) !important;
+      border-radius: 15px;
+      //max-width: 50%;
+    }
+  }
+}
